@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://b1knfqx6cgpdl"]
+
+[ext_resource type="Script" uid="uid://c0yc8r8o3v30m" path="res://MessageBoard/message_board.gd" id="1_wk7uc"]
+[ext_resource type="PackedScene" uid="uid://bc7xvki7n8hyu" path="res://MessageBoard/MessageBoardMessage/message_board_message.tscn" id="2_vshuy"]
+
+[node name="MessageBoard" type="Control" unique_id=2075059041]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wk7uc")
+message_board_message_packed_scene = ExtResource("2_vshuy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1951914459]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -302.0
+offset_right = 302.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=438556310]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer" unique_id=1308212398]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="MessageNameField" type="TextEdit" parent="VBoxContainer/HBoxContainer/MarginContainer" unique_id=984483968]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "name"
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/HBoxContainer" unique_id=2076674735]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="MessageContentField" type="TextEdit" parent="VBoxContainer/HBoxContainer/MarginContainer3" unique_id=1338461667]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "message"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" unique_id=943421677]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="SendButton" type="Button" parent="VBoxContainer/MarginContainer2" unique_id=686300441]
+layout_mode = 2
+text = "Send"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer" unique_id=1863657412]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MessagesContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer" unique_id=1418857923]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Message" parent="VBoxContainer/ScrollContainer/MessagesContainer" unique_id=1493999902 instance=ExtResource("2_vshuy")]
+layout_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/MarginContainer2/SendButton" to="." method="_on_send_button_pressed"]
