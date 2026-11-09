@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dwik2vkwj8jui"]
+
+[node name="Label" type="Label" unique_id=1419409146]
+offset_right = 474.0
+offset_bottom = 110.0
+theme_override_font_sizes/font_size = 80
+text = "Hello World!"
