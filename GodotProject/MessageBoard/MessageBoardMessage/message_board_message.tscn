@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bc7xvki7n8hyu"]
+
+[ext_resource type="Script" uid="uid://bsmvcbe25e88x" path="res://MessageBoard/MessageBoardMessage/message_board_message.gd" id="1_ry0af"]
+
+[node name="Message" type="HBoxContainer" unique_id=1493999902]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 26.0
+grow_horizontal = 2
+script = ExtResource("1_ry0af")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=471095583]
+layout_mode = 2
+theme_override_constants/margin_right = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=684713540]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="MarginContainer/HBoxContainer" unique_id=125995558]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 18
+text = "name"
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="Colon" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1310614351]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 18
+text = ":"
+
+[node name="MessageLabel" type="Label" parent="." unique_id=1118373177]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "message message message"
+autowrap_mode = 3

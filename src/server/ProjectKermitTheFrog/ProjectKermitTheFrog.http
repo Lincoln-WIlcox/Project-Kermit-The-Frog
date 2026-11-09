@@ -1,0 +1,6 @@
+@ProjectKermitTheFrog_HostAddress = http://localhost:5144
+
+GET {{ProjectKermitTheFrog_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

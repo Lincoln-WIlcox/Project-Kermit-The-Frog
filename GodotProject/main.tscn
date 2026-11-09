@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://dwik2vkwj8jui"]
 
-[node name="Label" type="Label" unique_id=1419409146]
-offset_right = 474.0
-offset_bottom = 110.0
-theme_override_font_sizes/font_size = 80
-text = "Hello World!"
+[ext_resource type="Script" uid="uid://ce3rrg6iqpsw3" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://b1knfqx6cgpdl" path="res://MessageBoard/message_board.tscn" id="1_ig7tw"]
+
+[node name="Main" type="Node" unique_id=1823766769]
+script = ExtResource("1_0xm2m")
+
+[node name="MessageBoard" parent="." unique_id=2075059041 instance=ExtResource("1_ig7tw")]
+
+[connection signal="message_sent" from="MessageBoard" to="." method="_on_message_board_message_sent"]
